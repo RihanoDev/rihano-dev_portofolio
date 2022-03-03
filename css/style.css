@@ -3,6 +3,10 @@
   background-color: #d3d3d3;
 }
 
+li a.active {
+  background-color: #ffa500;
+}
+
 #projects {
   background-color: #d3d3d3;
 }

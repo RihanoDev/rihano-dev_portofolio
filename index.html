@@ -21,7 +21,7 @@
   </head>
   <body id="home">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#home">Rihano-Dev</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,13 +29,43 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
-            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+            <a class="nav-link" aria-current="page" href="#home">Home</a>
             <a class="nav-link" href="#about">About</a>
             <a class="nav-link" href="#projects">Projects</a>
             <a class="nav-link" href="#contact">Contact</a>
             <a class="nav-link" href="#gallery">Gallery</a>
             <a class="nav-link" href="#equipment">Equipment</a>
           </div>
+        </div>
+      </div>
+    </nav> -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Rihano-Dev</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#equipment">Equipment</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -217,7 +247,7 @@
           <h2>My Equipment</h2>
         </div>
       </div>
-      <div class="row justify-content-center">
+      <div class="row justify-content-center" data-aos-duration="1000">
         <div class="row-md-6 col-lg-4 mb-3">
           <div class="mouse-box box-eq">
             <h4 class="mouse-name">Logitech G102</h4>
@@ -225,14 +255,14 @@
             <a href="#" class="btn btn-light mouse-detail-button">Show Details</a>
           </div>
         </div>
-        <div class="row-md-6 col-lg-4 mb-3">
+        <div class="row-md-6 col-lg-4 mb-3" data-aos-duration="1000" data-aos-delay="200">
           <div class="keyboard-box box-eq">
             <h4 class="keyboard-name">Fantech MK853</h4>
             <img src="img/equipment/e2.png" alt="Fantech Keyboard" class="keyboard-img">
             <a href="#" class="btn btn-light keyboard-detail-button">Show Details</a>
           </div>
         </div>
-        <div class="row-md-6 col-lg-4 mb-3">
+        <div class="row-md-6 col-lg-4 mb-3" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
           <div class="laptop-box box-eq">
             <h4 class="laptop-name">Asus TUF A15 2021</h4>
             <img src="img/equipment/e3.png" alt="Asus TUF A15" class="laptop-img">
@@ -299,16 +329,10 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       const galleryImage = document.querySelectorAll('.gallery-img')
-      const equipmentBox = document.querySelectorAll('.box-eq')
       galleryImage.forEach((img, i) => {
         img.dataset.aos = 'fade-down'
         img.dataset.aosDelay = i*200
         img.dataset.aosDuration = 1000
-      })
-      equipmentBox.forEach((box, i) => {
-        box.dataset.aos = 'zoom-in'
-        box.dataset.aosDelay = i*200
-        box.dataset.aosDuration = 1000
       })
       AOS.init({
         once: true
@@ -354,7 +378,16 @@
     <script type="text/javascript">
       VanillaTilt.init(document.querySelectorAll(".box-eq"), {
         max: 25,
-        speed: 100
+        speed: 100,
+      });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(function(){
+        $('body').on('click', '.nav-link', function(){
+          $('.nav-link').removeClass('active');
+          $(this).closest('.nav-link').addClass('active');
+        });
       });
     </script>
     <!-- Option 2: Separate Popper and Bootstrap JS -->
